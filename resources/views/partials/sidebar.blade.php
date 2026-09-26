@@ -1,0 +1,33 @@
+<aside class="flex h-full w-64 flex-col overflow-y-auto border-r border-slate-300 bg-white">
+    {{-- Logo --}}
+    <div class="flex h-16 shrink-0 items-center justify-center">
+        <a href="{{ route('dashboard') }}">
+            <x-lanxyn-logo />
+        </a>
+    </div>
+
+    <hr class="mx-auto w-56 border-slate-300">
+
+    {{-- Links --}}
+    <nav class="flex-1 p-4">
+        <ul class="mx-auto space-y-4">
+            <li>
+                <a
+                    href="{{ route('dashboard') }}"
+                    @class([
+                        'my-transition flex items-center gap-2 rounded-xl p-4 text-sm font-medium hover:bg-amber-100 hover:text-amber-600',
+                        'bg-amber-100 text-amber-600' => request()->routeIs('dashboard'),
+                        'bg-slate-100 text-slate-700' => !request()->routeIs('dashboard'),
+                    ])
+                >
+                    <x-icons.house />
+                    Dashboard
+                </a>
+            </li>
+
+            <p class="mb-2 text-sm font-medium text-slate-500">Estoque</p>
+
+            <p class="mb-2 text-sm font-medium text-slate-500">Produto</p>
+        </ul>
+    </nav>
+</aside>
