@@ -33,9 +33,6 @@
                     placeholder="Informe a data de compra"
                     required
                 />
-                @error('email')
-                    <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
-                @enderror
             </div>
 
             {{-- Fornecedor --}}
@@ -129,16 +126,15 @@
                     class="mb-2 block font-medium text-slate-700"
                     for="expiration_date"
                 >
-                    Data de Vencimento
+                    Data de Validade
                     <span class="text-red-500">*</span>
                 </label>
                 <input
                     class="my-input"
                     id="expiration_date"
                     name="expiration_date"
-                    type="string"
-                    maxlength="10"
-                    placeholder="DD/MM/AAAA"
+                    type="date"
+                    placeholder="Informe a data de validade"
                     required
                 />
             </div>
