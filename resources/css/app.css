@@ -6,3 +6,23 @@
 @theme {
     --font-sans: Poppins;
 }
+
+.my-transition {
+    @apply transition duration-200;
+}
+
+.my-input {
+    @apply w-full p-3 transition duration-200 border shadow-sm rounded-xl border-slate-300 bg-slate-50 text-slate-700 placeholder-slate-400 hover:border-amber-400 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50;
+}
+
+.my-input-error {
+    @apply w-full rounded-xl border border-red-300 bg-red-50 p-3 text-red-500 placeholder-red-400 shadow-sm transition duration-200 hover:border-red-300 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/50;
+}
+
+.my-input-success {
+    @apply w-full rounded-xl border border-green-300 bg-green-50 p-3 text-green-600 placeholder-green-400 shadow-sm transition duration-200 hover:border-green-300 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50;
+}
+
+.my-btn-primary {
+    @apply bg-amber-500 hover:bg-amber-600 p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-amber-500/50 w-full font-medium text-white transition duration-200 cursor-pointer;
+}
