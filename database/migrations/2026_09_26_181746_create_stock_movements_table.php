@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('stock_movements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('stock_id')->constrained('stocks')->restrictOnDelete();
+            $table->foreignId('stock_id')->constrained('stock_batches')->restrictOnDelete();
             $table->integer('quantity');
             $table->string('movement_type', 7);
             $table->string('reason')->nullable();
