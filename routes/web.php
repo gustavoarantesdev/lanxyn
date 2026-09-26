@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,4 +17,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::view('/dashboard', 'dashboard.index')->name('dashboard');
+
+    Route::prefix('products')->group(function () {
+        Route::get('/index', [ProductController::class, 'index'])->name(('product.index'));
+    });
 });
