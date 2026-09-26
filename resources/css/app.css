@@ -26,3 +26,11 @@
 .my-btn-primary {
     @apply bg-amber-500 hover:bg-amber-600 p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-amber-500/50 w-full font-medium text-white transition duration-200 cursor-pointer;
 }
+
+.my-btn-success {
+    @apply bg-green-500 hover:bg-green-600 p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-green-500/50 w-full font-medium text-white transition duration-200 cursor-pointer;
+}
+
+.my-btn-light {
+    @apply bg-slate-100 border border-slate-300 hover:bg-slate-200 p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-slate-300/50 w-full font-medium text-slate-500 transition duration-200 cursor-pointer;
+}
