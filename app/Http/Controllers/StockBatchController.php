@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\StockBatch;
+use App\Models\StockMovement;
 use App\Models\Supplier;
+use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,9 +45,31 @@ class StockBatchController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $expirationDate = Carbon::createFromFormat('d/m/Y', $request->input('expiration_date'))->format('Y-m-d');
+
+        // Registra na tabela de lotes
+        $stockBatch = StockBatch::create([
+            'user_id' => Auth::id(),
+            'product_id' => $request->input('product_id'),
+            'supplier_id' => $request->input('supplier_id'),
+            'initial_quantity' => (int) $request->input('quantity'),
+            'remaining_quantity' => (int) $request->input('quantity'),
+            'purchase_date' => $request->input('purchase_date'),
+            'expiration_date' => $expirationDate,
+            'location' => $request->input('location'),
+        ]);
+
+        // Registra na tabela de movimentação
+        StockMovement::create([
+            'stock_id' => $stockBatch->id,
+            'movement_type' => 'entry',
+            'quantity' => (int) $request->input('quantity'),
+            'movement_date' => now(),
+        ]);
+
+        return redirect()->route('dashboard');
     }
 
     /**
