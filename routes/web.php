@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StockBatchController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,5 +21,10 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('products')->group(function () {
         Route::get('/index', [ProductController::class, 'index'])->name(('product.index'));
+    });
+
+    Route::prefix('stocks')->group(function () {
+        Route::get('/create', [StockBatchController::class, 'create'])->name('stock.create');
+        Route::post('/create', [StockBatchController::class, 'store'])->name('stock.create');
     });
 });
