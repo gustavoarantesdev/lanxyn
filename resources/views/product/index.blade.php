@@ -14,11 +14,11 @@
                 <table class="w-full text-left text-sm">
                     <thead class="rounded-xl border-b border-slate-300 bg-slate-50 text-sm text-slate-500">
                         <tr>
-                            <th class="rounded-tl-xl px-6 py-3 font-medium">#</th>
+                            <th class="px-6 py-3 font-medium">#</th>
                             <th class="px-6 py-3 font-medium">Nome</th>
-                            <th class="rounded-tr-xl px-6 py-3 font-medium">Preço de Venda</th>
-                            <th class="rounded-tr-xl px-6 py-3 font-medium">Qtd. Mínima</th>
-                            <th class="rounded-tr-xl px-6 py-3 font-medium">Qtd. Máxima</th>
+                            <th class="px-6 py-3 font-medium">Preço de Venda</th>
+                            <th class="px-6 py-3 font-medium">Qtd. Mínima</th>
+                            <th class="px-6 py-3 font-medium">Qtd. Máxima</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-200">
