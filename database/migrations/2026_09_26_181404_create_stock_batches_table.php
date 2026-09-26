@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->restrictOnDelete();
             $table->foreignId('product_id')->constrained('products')->restrictOnDelete();
             $table->foreignId('supplier_id')->constrained('suppliers')->restrictOnDelete();
-            $table->string('batch_code');
+            $table->string('batch_code')->nullable();
             $table->integer('initial_quantity');
             $table->integer('remaining_quantity');
             $table->date('purchase_date');
