@@ -97,7 +97,24 @@ class StockBatchController extends Controller
      */
     public function stockOutStore(Request $request)
     {
-        dd($request->all());
+        $stockBatch = StockBatch::where('user_id', Auth::id())
+            ->findOrFail($request->input('batch_id'));
+
+        $actualQuantity = $stockBatch->remaining_quantity;
+
+        $result = $actualQuantity - $request->input('quantity');
+
+        $stockBatch->update(['remaining_quantity' => $result]);
+
+        // Registra na tabela de movimentação
+        StockMovement::create([
+            'stock_id' => $stockBatch->id,
+            'movement_type' => $request->input('reason'),
+            'quantity' => (int) $request->input('quantity'),
+            'movement_date' => $request->input('movement_date'),
+        ]);
+
+        return redirect()->route('stock.index');
     }
 
     /**
