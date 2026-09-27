@@ -16,7 +16,8 @@
                         <tr>
                             <th class="px-6 py-3 font-medium">#</th>
                             <th class="px-6 py-3 font-medium">Nome</th>
-                            <th class="px-6 py-3 font-medium">Preço de Venda</th>
+                            <th class="px-6 py-3 font-medium">Preço de venda</th>
+                            <th class="px-6 py-3 font-medium">Em estoque</th>
                             <th class="px-6 py-3 font-medium">Qtd. Mínima</th>
                             <th class="px-6 py-3 font-medium">Qtd. Máxima</th>
                         </tr>
@@ -26,7 +27,8 @@
                             <tr class="font-medium text-slate-600 hover:bg-slate-50">
                                 <td class="px-6 py-4">{{ $product->id }}</td>
                                 <td class="px-6 py-4">{{ $product->name }}</td>
-                                <td class="px-6 py-4">{{ $product->sell_price }}</td>
+                                <td class="px-6 py-4">R$ {{ $product->sell_price }}</td>
+                                <td class="px-6 py-4">{{ $product->total_stock }}</td>
                                 <td class="px-6 py-4">{{ $product->min_stock }}</td>
                                 <td class="px-6 py-4">{{ $product->max_stock }}</td>
                             </tr>
