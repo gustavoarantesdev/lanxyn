@@ -3,7 +3,7 @@
 @section('content')
     {{-- Header --}}
     <div class="flex items-center justify-between pr-4">
-        <h1 class="px-6 py-4 text-xl font-semibold text-slate-700">Produtos</h1>
+        <h1 class="px-6 py-4 text-xl font-semibold text-slate-700">Relatório de Produtos</h1>
     </div>
 
     <hr class="border-slate-300">
