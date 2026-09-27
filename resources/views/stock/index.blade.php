@@ -14,7 +14,7 @@
                 <table class="w-full text-left text-sm">
                     <thead class="rounded-xl border-b border-slate-300 bg-slate-50 text-sm text-slate-500">
                         <tr>
-                            <th class="px-6 py-3 font-medium">#</th>
+                            <th class="px-6 py-3 font-medium">Lote</th>
                             <th class="px-6 py-3 font-medium">Produto</th>
                             <th class="px-6 py-3 font-medium">Qtd. inicial</th>
                             <th class="px-6 py-3 font-medium">Qtd. atual</th>
@@ -25,7 +25,7 @@
                     <tbody class="divide-y divide-slate-200">
                         @foreach ($stockBatches as $stockBatch)
                             <tr class="font-medium text-slate-600 hover:bg-slate-50">
-                                <td class="px-6 py-4">{{ $stockBatch->id }}</td>
+                                <td class="px-6 py-4">L{{ $stockBatch->id }}</td>
                                 <td class="px-6 py-4">{{ $stockBatch->product->name }}</td>
                                 <td class="px-6 py-4">{{ $stockBatch->initial_quantity }}</td>
                                 <td class="px-6 py-4">{{ $stockBatch->remaining_quantity }}</td>
