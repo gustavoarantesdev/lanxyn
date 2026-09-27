@@ -6,7 +6,6 @@ use App\Models\Product;
 use App\Models\StockBatch;
 use App\Models\StockMovement;
 use App\Models\Supplier;
-use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -73,6 +72,32 @@ class StockBatchController extends Controller
         ]);
 
         return redirect()->route('dashboard');
+    }
+
+    /**
+     * Show the form for creating a new resource off Stock Out.
+     */
+    public function stockOutCreate(): View
+    {
+        $products = Product::where('user_id', Auth::id())
+            ->whereHas('stockBatches', function ($query) {
+                $query->where('remaining_quantity', '>', 0);
+            })
+            ->select('id', 'name')
+            ->with(['stockBatches:id,product_id'])
+            ->withSum('stockBatches as total_stock', 'remaining_quantity')
+            ->orderBy('created_at', 'asc')
+            ->get();
+
+        return view('stock.stockOutCreate', compact('products'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function stockOutStore(Request $request)
+    {
+        dd($request->all());
     }
 
     /**
