@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductCategory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,7 +28,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = ProductCategory::where('user_id', Auth::id())
+            ->where('is_active', 1)
+            ->get();
+
+        return view('product.create', compact('categories'));
     }
 
     /**
