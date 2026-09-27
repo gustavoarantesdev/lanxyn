@@ -20,7 +20,10 @@ Route::middleware('auth')->group(function () {
     Route::view('/dashboard', 'dashboard.index')->name('dashboard');
 
     Route::prefix('products')->group(function () {
-        Route::get('/index', [ProductController::class, 'index'])->name(('product.index'));
+        Route::get('/index', [ProductController::class, 'index'])->name('product.index');
+
+        Route::get('/create', [ProductController::class, 'create'])->name('product.create');
+        Route::post('/create', [ProductController::class, 'store'])->name('product.create');
     });
 
     Route::prefix('stocks')->group(function () {
