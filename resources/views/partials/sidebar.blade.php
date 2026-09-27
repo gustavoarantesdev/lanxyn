@@ -42,6 +42,20 @@
 
             <li>
                 <a
+                    href="{{ route('stock.out-create') }}"
+                    @class([
+                        'my-transition flex items-center gap-2 rounded-xl p-4 text-sm font-medium hover:bg-amber-100 hover:text-amber-600',
+                        'bg-amber-100 text-amber-600' => request()->routeIs('stock.out-create'),
+                        'bg-slate-100 text-slate-700' => !request()->routeIs('stock.out-create'),
+                    ])
+                >
+                    <x-icons.package-minus />
+                    Saída
+                </a>
+            </li>
+
+            <li>
+                <a
                     href="{{ route('stock.index') }}"
                     @class([
                         'my-transition flex items-center gap-2 rounded-xl p-4 text-sm font-medium hover:bg-amber-100 hover:text-amber-600',
