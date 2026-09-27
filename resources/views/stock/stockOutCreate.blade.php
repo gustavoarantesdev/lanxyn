@@ -113,10 +113,11 @@
                             hidden
                         >Selecione...</option>
                         <option value="sale">Venda</option>
-                        <option value="lose">Perda/avaria</option>
-                        <option value="lose">Detoriação</option>
-                        <option value="lose">Devolução ao fornecedor</option>
-                        <option value="lose">Descarte</option>
+                        <option value="loss">Perda/avaria</option>
+                        <option value="production">Produção</option>
+                        <option value="deterioration">Detoriação</option>
+                        <option value="return_supplier">Devolução ao fornecedor</option>
+                        <option value="discard">Descarte</option>
                     </select>
                     <x-icons.chevrons-up-down
                         class="pointer-events-none absolute right-2 top-1/2 flex -translate-y-1/2 items-center text-slate-500"
