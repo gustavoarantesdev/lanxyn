@@ -28,5 +28,8 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/create', [StockBatchController::class, 'create'])->name('stock.create');
         Route::post('/create', [StockBatchController::class, 'store'])->name('stock.create');
+
+        Route::get('/out-create', [StockBatchController::class, 'stockOutCreate'])->name('stock.out-create');
+        Route::post('/out-create', [StockBatchController::class, 'stockOutStore'])->name('stock.out-create');
     });
 });
