@@ -16,8 +16,8 @@
                         <tr>
                             <th class="px-6 py-3 font-medium">Lote</th>
                             <th class="px-6 py-3 font-medium">Produto</th>
-                            <th class="px-6 py-3 font-medium">Qtd. inicial</th>
                             <th class="px-6 py-3 font-medium">Qtd. atual</th>
+                            <th class="px-6 py-3 font-medium">Qtd. inicial</th>
                             <th class="px-6 py-3 font-medium">Data da compra</th>
                             <th class="px-6 py-3 font-medium">Validade</th>
                         </tr>
@@ -27,8 +27,8 @@
                             <tr class="font-medium text-slate-600 hover:bg-slate-50">
                                 <td class="px-6 py-4">L{{ $stockBatch->id }}</td>
                                 <td class="px-6 py-4">{{ $stockBatch->product->name }}</td>
-                                <td class="px-6 py-4">{{ $stockBatch->initial_quantity }}</td>
                                 <td class="px-6 py-4">{{ $stockBatch->remaining_quantity }}</td>
+                                <td class="px-6 py-4">{{ $stockBatch->initial_quantity }}</td>
                                 <td class="px-6 py-4">{{ $stockBatch->purchase_date }}</td>
                                 <td class="px-6 py-4">{{ $stockBatch->expiration_date }}</td>
                             </tr>
