@@ -31,7 +31,7 @@ class Product extends Model
         return $this->hasOne(ProductCategory::class);
     }
 
-    public function stockBatche(): HasMany
+    public function stockBatches(): HasMany
     {
         return $this->hasMany(StockBatch::class);
     }
