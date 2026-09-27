@@ -73,7 +73,7 @@
                     class="mb-2 block font-medium text-slate-700"
                     for="sell_price"
                 >
-                    Preço
+                    Preço de venda
                     <span class="text-red-500">*</span>
                 </label>
                 <input
