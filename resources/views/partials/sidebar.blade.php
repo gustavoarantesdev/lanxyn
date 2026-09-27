@@ -11,6 +11,7 @@
     {{-- Links --}}
     <nav class="flex-1 p-4">
         <ul class="mx-auto space-y-4">
+            {{-- Dashboard --}}
             <li>
                 <a
                     href="{{ route('dashboard') }}"
@@ -25,7 +26,9 @@
                 </a>
             </li>
 
+            {{-- Estoque --}}
             <p class="mb-2 text-sm font-medium text-slate-500">Estoque</p>
+            {{-- Entrada --}}
             <li>
                 <a
                     href="{{ route('stock.create') }}"
@@ -40,6 +43,7 @@
                 </a>
             </li>
 
+            {{-- Saída --}}
             <li>
                 <a
                     href="{{ route('stock.out-create') }}"
@@ -54,6 +58,7 @@
                 </a>
             </li>
 
+            {{-- Relatório --}}
             <li>
                 <a
                     href="{{ route('stock.index') }}"
@@ -68,7 +73,24 @@
                 </a>
             </li>
 
+
+            {{-- Produto --}}
             <p class="mb-2 text-sm font-medium text-slate-500">Produto</p>
+            {{-- Cadastrar --}}
+            <li>
+                <a
+                    href="{{ route('product.create') }}"
+                    @class([
+                        'my-transition flex items-center gap-2 rounded-xl p-4 text-sm font-medium hover:bg-amber-100 hover:text-amber-600',
+                        'bg-amber-100 text-amber-600' => request()->routeIs('product.create'),
+                        'bg-slate-100 text-slate-700' => !request()->routeIs('product.create'),
+                    ])
+                >
+                    <x-icons.plus />
+                    Cadastrar
+                </a>
+            </li>
+            {{-- Relatório --}}
             <li>
                 <a
                     href="{{ route('product.index') }}"
@@ -82,6 +104,8 @@
                     Relatório
                 </a>
             </li>
+
+
         </ul>
     </nav>
 </aside>
