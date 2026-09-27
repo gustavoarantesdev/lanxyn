@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::prefix('stocks')->group(function () {
+        Route::get('/index', [StockBatchController::class, 'index'])->name('stock.index');
+
         Route::get('/create', [StockBatchController::class, 'create'])->name('stock.create');
         Route::post('/create', [StockBatchController::class, 'store'])->name('stock.create');
     });
