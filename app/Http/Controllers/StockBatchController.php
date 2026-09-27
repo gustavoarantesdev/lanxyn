@@ -17,9 +17,14 @@ class StockBatchController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        //
+        $stockBatches = StockBatch::where('user_id', Auth::id())
+            ->with('product')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('stock.index', compact('stockBatches'));
     }
 
     /**
@@ -47,8 +52,6 @@ class StockBatchController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $expirationDate = Carbon::createFromFormat('d/m/Y', $request->input('expiration_date'))->format('Y-m-d');
-
         // Registra na tabela de lotes
         $stockBatch = StockBatch::create([
             'user_id' => Auth::id(),
@@ -57,7 +60,7 @@ class StockBatchController extends Controller
             'initial_quantity' => (int) $request->input('quantity'),
             'remaining_quantity' => (int) $request->input('quantity'),
             'purchase_date' => $request->input('purchase_date'),
-            'expiration_date' => $expirationDate,
+            'expiration_date' => $request->input('expiration_date'),
             'location' => $request->input('location'),
         ]);
 
