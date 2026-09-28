@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StockBatchController;
+use App\Http\Controllers\StockMovementController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,6 +29,8 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('stocks')->group(function () {
         Route::get('/index', [StockBatchController::class, 'index'])->name('stock.index');
+
+        Route::get('/movements', [StockMovementController::class, 'index'])->name('stock.movements');
 
         Route::get('/create', [StockBatchController::class, 'create'])->name('stock.create');
         Route::post('/create', [StockBatchController::class, 'store'])->name('stock.create');
