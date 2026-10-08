@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('account_name', 50);
             $table->string('branch', 4);
             $table->string('account_number', 5);
-            $table->text('notes');
+            $table->text('notes')->nullable();
             $table->foreignId('created_by')->nullable()->constrained('users')->restrictOnDelete();
             $table->foreignId('updated_by')->nullable()->constrained('users')->restrictOnDelete();
             $table->timestamps();
