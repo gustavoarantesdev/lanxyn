@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BankAccountSeeder::class,
             CardMachineSeeder::class,
+            CardFeeSeeder::class,
             ProductCategorySeeder::class,
             ProductSeeder::class,
             SupplierSeeder::class,
