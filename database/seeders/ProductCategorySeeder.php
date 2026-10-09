@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\ProductCategory;
+use App\Models\Tenant;
 use Illuminate\Database\Seeder;
 
 class ProductCategorySeeder extends Seeder
@@ -12,9 +13,10 @@ class ProductCategorySeeder extends Seeder
      */
     public function run(): void
     {
-        ProductCategory::create(['user_id' => 1, 'name' => 'Bebidas']);
-        ProductCategory::create(['user_id' => 1, 'name' => 'Lanches']);
-        ProductCategory::create(['user_id' => 1, 'name' => 'Doces / Sobremesas']);
-        ProductCategory::create(['user_id' => 1, 'name' => 'Ingredientes / Insumos']);
+        ProductCategory::create(['tenant_id' => Tenant::value('id'), 'name' => 'Bebidas']);
+        ProductCategory::create(['tenant_id' => Tenant::value('id'), 'name' => 'Salgados']);
+        ProductCategory::create(['tenant_id' => Tenant::value('id'), 'name' => 'Doces / Sobremesas']);
+        ProductCategory::create(['tenant_id' => Tenant::value('id'), 'name' => 'Ingredientes / Insumos']);
+        ProductCategory::create(['tenant_id' => Tenant::value('id'), 'name' => 'Outros']);
     }
 }

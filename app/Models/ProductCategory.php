@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
-#[Fillable(['name', 'is_active'])]
+#[Fillable(['tenant_id', 'name', 'is_active', 'created_by', 'updated_by'])]
 class ProductCategory extends Model
 {
     //
