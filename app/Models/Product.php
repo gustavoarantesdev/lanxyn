@@ -18,6 +18,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
     'measure_unit',
     'description',
     'is_active',
+    'crated_by',
+    'updated_by',
 ])]
 class Product extends Model
 {

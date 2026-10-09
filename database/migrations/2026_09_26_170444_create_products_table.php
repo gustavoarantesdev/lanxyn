@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->restrictOnDelete();
+            $table->foreignId('tenant_id')->constrained('tenants')->restrictOnDelete();
             $table->foreignId('category_id')->constrained('product_categories')->restrictOnDelete();
             $table->string('name', 150);
             $table->decimal('sell_price', 10, 2)->default(0.0);
@@ -22,6 +22,8 @@ return new class extends Migration
             $table->char('measure_unit', 2)->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_active')->default(true);
+            $table->foreignId('created_by')->nullable()->constrained('users')->restrictOnDelete();
+            $table->foreignId('updated_by')->nullable()->constrained('users')->restrictOnDelete();
             $table->timestamps();
         });
     }
