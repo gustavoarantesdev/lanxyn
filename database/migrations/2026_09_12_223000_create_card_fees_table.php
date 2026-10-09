@@ -16,9 +16,9 @@ return new class extends Migration
             $table->foreignId('tenant_id')->constrained('tenants')->restrictOnDelete();
             $table->foreignId('machine_id')->constrained('card_machines')->restrictOnDelete();
             $table->string('brand', 30);
-            $table->string('type_operation', 100);
+            $table->string('type', 50);
             $table->float('interest_rate');
-            $table->integer('days_receipt');
+            $table->integer('settlement_days');
             $table->boolean('is_active')->default(true);
             $table->foreignId('created_by')->nullable()->constrained('users')->restrictOnDelete();
             $table->foreignId('updated_by')->nullable()->constrained('users')->restrictOnDelete();

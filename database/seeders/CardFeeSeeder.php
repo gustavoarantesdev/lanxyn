@@ -18,9 +18,9 @@ class CardFeeSeeder extends Seeder
             'tenant_id' => Tenant::value('id'),
             'machine_id' => CardMachine::value('id'),
             'brand' => 'Taxa Padrão',
-            'type_operation' => 'Crédito',
+            'type' => 'Crédito',
             'interest_rate' => 2.5,
-            'days_receipt' => 1,
+            'settlement_days' => 1,
         ]);
     }
 }
