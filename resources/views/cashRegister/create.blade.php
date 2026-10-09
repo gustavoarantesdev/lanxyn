@@ -10,7 +10,7 @@
 
     <form
         class="space-y-4 px-6 py-4"
-        action="{{ route('product.create') }}"
+        action="{{ route('cash.create') }}"
         method="post"
     >
         @csrf
