@@ -19,9 +19,9 @@ return new class extends Migration
             $table->decimal('opening_amount', 10, 2);
             $table->timestamp('closed_at')->nullable();
             $table->foreignId('closed_by')->nullable()->constrained('users')->restrictOnDelete();
-            $table->decimal('expected_amount', 10, 2);
-            $table->decimal('actual_amount', 10, 2);
-            $table->decimal('difference_amount', 10, 2);
+            $table->decimal('expected_amount', 10, 2)->nullable();
+            $table->decimal('actual_amount', 10, 2)->nullable();
+            $table->decimal('difference_amount', 10, 2)->nullable();
             $table->enum('status', ['open', 'closed']);
             $table->timestamps();
         });
