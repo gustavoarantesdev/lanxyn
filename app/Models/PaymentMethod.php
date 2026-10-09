@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
     'tenant_id',
     'account_id',
     'name',
-    'short_name',
+    'type',
     'is_active',
     'created_by',
     'updated_by',

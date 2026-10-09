@@ -18,7 +18,7 @@ class PaymentMethodSeeder extends Seeder
             'tenant_id' => Tenant::value('id'),
             'account_id' => BankAccount::value('id'),
             'name' => 'PIX',
-            'short_name' => 'PIX',
+            'type' => 'PIX',
         ]);
     }
 }

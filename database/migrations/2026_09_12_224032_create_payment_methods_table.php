@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('tenant_id')->constrained('tenants')->restrictOnDelete();
             $table->foreignId('account_id')->constrained('bank_accounts')->restrictOnDelete();
             $table->string('name', 50);
-            $table->string('short_name', 30);
+            $table->string('type', 30);
             $table->boolean('is_active')->default(true);
             $table->foreignId('created_by')->nullable()->constrained('users')->restrictOnDelete();
             $table->foreignId('updated_by')->nullable()->constrained('users')->restrictOnDelete();
