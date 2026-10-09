@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('tenant_id')->constrained('tenants')->restrictOnDelete();
             $table->string('name', 100);
             $table->boolean('is_active')->default(true);
+            $table->foreignId('created_by')->nullable()->constrained('users')->restrictOnDelete();
+            $table->foreignId('updated_by')->nullable()->constrained('users')->restrictOnDelete();
             $table->timestamps();
         });
     }
