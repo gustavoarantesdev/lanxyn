@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
     'tenant_id',
     'name',
     'account_name',
-    'branch',
+    'branch_number',
     'account_number',
     'notes',
     'created_by',

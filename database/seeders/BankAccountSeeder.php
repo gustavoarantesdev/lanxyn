@@ -17,7 +17,7 @@ class BankAccountSeeder extends Seeder
             'tenant_id' => Tenant::value('id'),
             'name' => 'Banco Padrão',
             'account_name' => 'BP',
-            'branch' => '9999',
+            'branch_number' => '9999',
             'account_number' => '99999',
         ]);
     }

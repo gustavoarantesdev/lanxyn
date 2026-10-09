@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('tenant_id')->constrained('tenants')->restrictOnDelete();
             $table->string('name', 100);
             $table->string('account_name', 50);
-            $table->string('branch', 4);
+            $table->string('branch_number', 4);
             $table->string('account_number', 5);
             $table->text('notes')->nullable();
             $table->foreignId('created_by')->nullable()->constrained('users')->restrictOnDelete();
