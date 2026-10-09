@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 #[Fillable([
     'name',
-    'trade_name',
+    'legal_name',
     'person_type',
     'document_number',
     'mobile_phone',
     'landline_phone',
     'email',
     'notes',
-    'joined_at',
+    'started_at',
     'ended_at',
 ])]
 class Tenant extends Model
