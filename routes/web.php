@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('cash')->group(function () {
         Route::get('/create', [CashRegisterController::class, 'create'])->name('cash.create');
+        Route::post('/create', [CashRegisterController::class, 'store'])->name('cash.create');
     });
 
     Route::prefix('stocks')->group(function () {
