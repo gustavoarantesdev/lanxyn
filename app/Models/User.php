@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
     'tenant_id',
     'name',
     'document_number',
-    'birthday',
+    'birth_date',
     'mobile_phone',
     'landline_phone',
     'email',
@@ -18,7 +18,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
     'role',
     'job_title',
     'joined_at',
-    'removed_at',
+    'terminated_at',
     'last_login_at',
 ])]
 #[Hidden(['password'])]

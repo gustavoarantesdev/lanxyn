@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('tenant_id')->constrained('tenants')->restrictOnDelete();
             $table->string('name', 150);
             $table->string('document_number', 14); // CPF
-            $table->date('birthday')->nullable();
+            $table->date('birth_date')->nullable();
             $table->string('mobile_phone', 13);
             $table->string('landline_phone', 12)->nullable();
             $table->string('email');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('role', 20)->default('operator');
             $table->string('job_title', 50)->nullable();
             $table->date('joined_at')->nullable();
-            $table->date('removed_at')->nullable();
+            $table->date('terminated_at')->nullable();
             $table->timestamp('last_login_at')->nullable();
             $table->foreignId('created_by')->nullable()->constrained('users')->restrictOnDelete();
             $table->foreignId('updated_by')->nullable()->constrained('users')->restrictOnDelete();
