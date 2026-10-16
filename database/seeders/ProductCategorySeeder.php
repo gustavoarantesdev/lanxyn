@@ -15,6 +15,7 @@ class ProductCategorySeeder extends Seeder
     {
         ProductCategory::create(['tenant_id' => Tenant::value('id'), 'name' => 'Bebidas']);
         ProductCategory::create(['tenant_id' => Tenant::value('id'), 'name' => 'Salgados']);
+        ProductCategory::create(['tenant_id' => Tenant::value('id'), 'name' => 'Quitandas']);
         ProductCategory::create(['tenant_id' => Tenant::value('id'), 'name' => 'Doces / Sobremesas']);
         ProductCategory::create(['tenant_id' => Tenant::value('id'), 'name' => 'Ingredientes / Insumos']);
         ProductCategory::create(['tenant_id' => Tenant::value('id'), 'name' => 'Outros']);
