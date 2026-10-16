@@ -16,8 +16,9 @@ return new class extends Migration
             $table->foreignId('tenant_id')->constrained('tenants')->restrictOnDelete();
             $table->foreignId('category_id')->constrained('product_categories')->restrictOnDelete();
             $table->string('name', 150);
+            $table->boolean('tracks_inventory');
             $table->decimal('sell_price', 10, 2)->default(0.0);
-            $table->integer('min_stock');
+            $table->integer('min_stock')->nullable();
             $table->integer('max_stock')->nullable();
             $table->char('measure_unit', 2)->nullable();
             $table->text('description')->nullable();
