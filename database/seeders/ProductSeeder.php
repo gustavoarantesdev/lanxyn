@@ -34,7 +34,6 @@ class ProductSeeder extends Seeder
             'category_id' => 4,
             'name' => 'FARINHA DE TRIGO 1KG',
             'tracks_inventory' => false,
-            'min_stock' => 5,
         ]);
 
     }
