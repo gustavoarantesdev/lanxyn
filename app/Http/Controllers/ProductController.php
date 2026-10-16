@@ -15,9 +15,9 @@ class ProductController extends Controller
      */
     public function index(): View
     {
-        $products = Product::where('user_id', Auth::id())
+        $products = Product::where('tenant_id', Auth::user()->tenant_id)
             ->withSum('stockBatches as total_stock', 'remaining_quantity')
-            ->orderBy('created_at', 'desc')
+            ->orderByDesc('created_at')
             ->get();
 
         return view('product.index', compact('products'));
