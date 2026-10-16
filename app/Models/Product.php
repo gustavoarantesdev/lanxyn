@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
     'user_id',
     'category_id',
     'name',
+    'tracks_inventory',
     'sell_price',
     'min_stock',
     'max_stock',
