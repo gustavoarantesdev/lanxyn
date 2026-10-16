@@ -86,6 +86,40 @@
                 />
             </div>
 
+            {{-- Controlar estoque --}}
+            <div class="w-full">
+                <label
+                    class="mb-2 block font-medium text-slate-700"
+                    for="tracks_inventory"
+                >
+                    Controlar Estoque?
+                    <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                    <select
+                        class="my-input appearance-none"
+                        id="tracks_inventory"
+                        name="tracks_inventory"
+                        required
+                    >
+                        <option
+                            value=""
+                            hidden
+                        >Selecione...</option>
+                        <option value="true">Sim</option>
+                        <option value="false">Não</option>
+                    </select>
+                    <x-icons.chevrons-up-down
+                        class="pointer-events-none absolute right-2 top-1/2 flex -translate-y-1/2 items-center text-slate-500"
+                    />
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="flex w-full space-x-6">
             {{-- Quantidade mínima --}}
             <div class="w-full">
                 <label
