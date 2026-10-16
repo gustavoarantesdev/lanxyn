@@ -17,6 +17,7 @@ class ProductSeeder extends Seeder
             'tenant_id' => Tenant::value('id'),
             'category_id' => 1,
             'name' => 'COCA COLA 600ML',
+            'tracks_inventory' => true,
             'sell_price' => 5.00,
             'min_stock' => 5,
         ]);
@@ -24,6 +25,7 @@ class ProductSeeder extends Seeder
             'tenant_id' => Tenant::value('id'),
             'category_id' => 1,
             'name' => 'PEPSI 600ML',
+            'tracks_inventory' => true,
             'sell_price' => 5.00,
             'min_stock' => 5,
         ]);
@@ -31,6 +33,7 @@ class ProductSeeder extends Seeder
             'tenant_id' => Tenant::value('id'),
             'category_id' => 4,
             'name' => 'FARINHA DE TRIGO 1KG',
+            'tracks_inventory' => false,
             'min_stock' => 5,
         ]);
 
