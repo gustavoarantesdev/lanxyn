@@ -28,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = ProductCategory::where('user_id', Auth::id())
+        $categories = ProductCategory::where('tenant_id', Auth::user()->tenant_id)
             ->where('is_active', 1)
             ->get();
 
