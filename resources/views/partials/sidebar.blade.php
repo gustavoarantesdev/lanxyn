@@ -13,64 +13,48 @@
         <ul class="mx-auto space-y-4">
             {{-- Dashboard --}}
             <li>
-                <a
+                <x-sidebar-link
                     href="{{ route('dashboard') }}"
-                    @class([
-                        'my-transition flex items-center gap-2 rounded-xl p-4 text-sm font-medium hover:bg-amber-100 hover:text-amber-600',
-                        'bg-amber-100 text-amber-600' => request()->routeIs('dashboard'),
-                        'bg-slate-100 text-slate-700' => !request()->routeIs('dashboard'),
-                    ])
+                    route="dashboard"
                 >
-                    <x-icons.house />
+                    <x-icons.package-plus />
                     Dashboard
-                </a>
+                </x-sidebar-link>
             </li>
 
             {{-- Estoque --}}
             <p class="mb-2 text-sm font-medium text-slate-500">Estoque</p>
             {{-- Entrada --}}
             <li>
-                <a
+                <x-sidebar-link
                     href="{{ route('stock.create') }}"
-                    @class([
-                        'my-transition flex items-center gap-2 rounded-xl p-4 text-sm font-medium hover:bg-amber-100 hover:text-amber-600',
-                        'bg-amber-100 text-amber-600' => request()->routeIs('stock.create'),
-                        'bg-slate-100 text-slate-700' => !request()->routeIs('stock.create'),
-                    ])
+                    route="stock.create"
                 >
                     <x-icons.package-plus />
                     Entrada
-                </a>
+                </x-sidebar-link>
             </li>
 
             {{-- Saída --}}
             <li>
-                <a
+                <x-sidebar-link
                     href="{{ route('stock.out-create') }}"
-                    @class([
-                        'my-transition flex items-center gap-2 rounded-xl p-4 text-sm font-medium hover:bg-amber-100 hover:text-amber-600',
-                        'bg-amber-100 text-amber-600' => request()->routeIs('stock.out-create'),
-                        'bg-slate-100 text-slate-700' => !request()->routeIs('stock.out-create'),
-                    ])
+                    route="stock.out-create"
                 >
                     <x-icons.package-minus />
                     Saída
-                </a>
+                </x-sidebar-link>
             </li>
 
             {{-- Relatório --}}
             <li>
-                <a
+                <x-sidebar-link
                     href="{{ route('stock.index') }}"
-                    @class([
-                        'my-transition flex items-center gap-2 rounded-xl p-4 text-sm font-medium hover:bg-amber-100 hover:text-amber-600',
-                        'bg-amber-100 text-amber-600' => request()->routeIs('stock.index'),
-                        'bg-slate-100 text-slate-700' => !request()->routeIs('stock.index'),
-                    ])
+                    route="stock.index"
                 >
                     <x-icons.file-box />
                     Relatório
-                </a>
+                </x-sidebar-link>
             </li>
 
 
@@ -78,48 +62,35 @@
             <p class="mb-2 text-sm font-medium text-slate-500">Produto</p>
             {{-- Cadastrar --}}
             <li>
-                <a
+                <x-sidebar-link
                     href="{{ route('product.create') }}"
-                    @class([
-                        'my-transition flex items-center gap-2 rounded-xl p-4 text-sm font-medium hover:bg-amber-100 hover:text-amber-600',
-                        'bg-amber-100 text-amber-600' => request()->routeIs('product.create'),
-                        'bg-slate-100 text-slate-700' => !request()->routeIs('product.create'),
-                    ])
+                    route="product.create"
                 >
                     <x-icons.plus />
                     Cadastrar
-                </a>
+                </x-sidebar-link>
             </li>
             {{-- Relatório --}}
             <li>
-                <a
+                <x-sidebar-link
                     href="{{ route('product.index') }}"
-                    @class([
-                        'my-transition flex items-center gap-2 rounded-xl p-4 text-sm font-medium hover:bg-amber-100 hover:text-amber-600',
-                        'bg-amber-100 text-amber-600' => request()->routeIs('product.index'),
-                        'bg-slate-100 text-slate-700' => !request()->routeIs('product.index'),
-                    ])
+                    route="product.index"
                 >
                     <x-icons.file-chart-column />
                     Relatório
-                </a>
+                </x-sidebar-link>
             </li>
 
             <p class="mb-2 text-sm font-medium text-slate-500">Caixa Diário</p>
             <li>
-                <a
+                <x-sidebar-link
                     href="{{ route('cash.create') }}"
-                    @class([
-                        'my-transition flex items-center gap-2 rounded-xl p-4 text-sm font-medium hover:bg-amber-100 hover:text-amber-600',
-                        'bg-amber-100 text-amber-600' => request()->routeIs('cash.create'),
-                        'bg-slate-100 text-slate-700' => !request()->routeIs('cash.create'),
-                    ])
+                    route="cash.create"
                 >
                     <x-icons.plus />
                     Abertura
-                </a>
+                </x-sidebar-link>
             </li>
-
         </ul>
     </nav>
 </aside>
