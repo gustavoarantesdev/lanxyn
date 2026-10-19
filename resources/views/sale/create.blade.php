@@ -74,6 +74,8 @@
                     id="sold_at"
                     name="sold_at"
                     type="datetime-local"
+                    x-data="{ today: new Date().toLocaleString('sv-SE', { timeZone: 'America/Sao_Paulo' }).replace(' ', 'T').slice(0, 16) }"
+                    x-model="today"
                     required
                 />
             </div>
