@@ -66,7 +66,7 @@
                     class="mb-2 block font-medium text-slate-700"
                     for="sold_at"
                 >
-                    Data da venda
+                    Data e hora da venda
                     <span class="text-red-500">*</span>
                 </label>
                 <input
