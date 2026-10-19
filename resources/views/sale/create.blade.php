@@ -83,8 +83,8 @@
 
         <div
             class="flex w-full space-x-6"
-            x-data="{ productId: '', price: '', quantity: '', amount: '0' }"
-            x-effect="amount = (parseFloat(price) || 0) * (parseFloat(quantity) || 0)"
+            x-data="{ productId: '', price: '', quantity: '', amount: '' }"
+            x-effect="amount = (parseFloat(price) || 0) * (parseFloat(quantity) || 0) || ''"
         >
             {{-- Produto --}}
             <div class="w-full">
