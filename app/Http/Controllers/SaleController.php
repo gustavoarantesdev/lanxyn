@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CashRegister;
+use App\Models\PaymentMethod;
+use App\Models\Product;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SaleController extends Controller
 {
@@ -17,9 +22,15 @@ class SaleController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
-        //
+        $cashRegister = CashRegister::where('tenant_id', Auth::user()->tenant_id)->first();
+
+        $products = Product::where('tenant_id', Auth::user()->tenant_id)->get();
+
+        $paymentMethods = PaymentMethod::where('tenant_id', Auth::user()->tenant_id)->get();
+
+        return view('sale.create', compact('cashRegister', 'products', 'paymentMethods'));
     }
 
     /**
