@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CashRegisterController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SaleController;
 use App\Http\Controllers\StockBatchController;
 use App\Http\Controllers\StockMovementController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,10 @@ Route::middleware('auth')->group(function () {
     Route::prefix('cash')->group(function () {
         Route::get('/create', [CashRegisterController::class, 'create'])->name('cash.create');
         Route::post('/create', [CashRegisterController::class, 'store'])->name('cash.create');
+    });
+
+    Route::prefix('sale')->group(function () {
+        Route::get('/create', [SaleController::class, 'create'])->name('sale.create');
     });
 
     Route::prefix('stocks')->group(function () {
