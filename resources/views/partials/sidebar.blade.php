@@ -91,6 +91,17 @@
                     Abertura
                 </x-sidebar-link>
             </li>
+
+            <p class="mb-2 text-sm font-medium text-slate-500">Venda</p>
+            <li>
+                <x-sidebar-link
+                    href="{{ route('sale.create') }}"
+                    route="sale.create"
+                >
+                    <x-icons.plus />
+                    Cadastrar
+                </x-sidebar-link>
+            </li>
         </ul>
     </nav>
 </aside>
