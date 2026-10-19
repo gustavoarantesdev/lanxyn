@@ -17,8 +17,26 @@ class PaymentMethodSeeder extends Seeder
         PaymentMethod::create([
             'tenant_id' => Tenant::value('id'),
             'account_id' => BankAccount::value('id'),
+            'name' => 'Dinheiro',
+            'type' => 'Dinheiro',
+        ]);
+        PaymentMethod::create([
+            'tenant_id' => Tenant::value('id'),
+            'account_id' => BankAccount::value('id'),
             'name' => 'PIX',
             'type' => 'PIX',
+        ]);
+        PaymentMethod::create([
+            'tenant_id' => Tenant::value('id'),
+            'account_id' => BankAccount::value('id'),
+            'name' => 'Cartão de Crédito',
+            'type' => 'Crédito',
+        ]);
+        PaymentMethod::create([
+            'tenant_id' => Tenant::value('id'),
+            'account_id' => BankAccount::value('id'),
+            'name' => 'Cartão de Débito',
+            'type' => 'Débito',
         ]);
     }
 }
